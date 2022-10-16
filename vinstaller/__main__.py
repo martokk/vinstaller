@@ -4,8 +4,8 @@ from enum import Enum
 from random import choice
 
 import typer
-from rich.console import Console
 from loguru import logger
+from rich.console import Console
 
 from vinstaller import version
 from vinstaller.example import ExampleClass
@@ -34,14 +34,17 @@ console = Console()
 def version_callback(print_version: bool) -> None:
     """Print the version of the package."""
     if print_version:
-        console.print(f"[yellow]vinstaller[/] version: [bold blue]{version}[/]")
+        console.print(
+            f"[yellow]vinstaller[/] version: [bold blue]{version}[/]"
+        )
         raise typer.Exit()
 
 
 @app.command(name="")
 def main(
     name: str = typer.Option(..., help="Person to greet."),
-    color: Optional[Color] = typer.Option(
+    color: Color
+    | None = typer.Option(
         None,
         "-c",
         "--color",
@@ -70,7 +73,6 @@ def main(
 
     # Example #DIV/0 Logging Error (caught by @logger.catch decorator)
     example.example_divide_by_zero()
-
 
 
 if __name__ == "__main__":
