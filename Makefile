@@ -153,7 +153,7 @@ build-desktop-file: ## Build .desktop File
 		"Terminal=false" > "$(PYTHONPATH)/dist_linux/$(IMAGE).desktop"
 
 .PHONY: install-desktop-file
-build-desktop-file: ## Install .desktop shortcut for user
+install-desktop-file: ## Install .desktop shortcut for user
 	desktop-file-install --dir=~/.local/share/applications "$(PYTHONPATH)/dist_linux/$(IMAGE).desktop"
 	update-desktop-database ~/.local/share/applications
 
