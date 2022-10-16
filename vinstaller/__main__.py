@@ -38,7 +38,7 @@ def version_callback(print_version: bool) -> None:
         raise typer.Exit()
 
 
-@app.command(names="")
+@app.command(name="")
 def main(
     name: str = typer.Option(..., help="Person to greet."),
     color: Optional[Color] = typer.Option(
@@ -63,10 +63,10 @@ def main(
 
     # Example Entry Point
     color = choice(list(Color)) if color is None else color
-    greeting: str = example.example(name=name)
-    logger.into(f"Simple Logging! {name=}")
+    greeting: str = example.print_name(name=name)
+    logger.info(f"Simple Logging! {name=}")
     console.print(f"[bold {color}]{greeting}[/]")
-    logger.sucess(f"Printed Name! {name=}")
+    logger.success(f"Printed Name! {name=}")
 
     # Example #DIV/0 Logging Error (caught by @logger.catch decorator)
     example.example_divide_by_zero()

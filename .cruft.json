@@ -1,6 +1,6 @@
 {
   "template": "/media/martokk/FILES/dev/templates/cookiecutter/cookiecutter_python",
-  "commit": "14e65238f1f0322f87a73a022686a0cd5f317afc",
+  "commit": "6f924e833b8f81c1230e848a0fd00fbc791c0901",
   "checkout": null,
   "context": {
     "cookiecutter": {
