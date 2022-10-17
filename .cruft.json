@@ -15,7 +15,7 @@
       "github_name": "martokk",
       "email": "25113632+martokk@users.noreply.github.com",
       "version": "0.1.0",
-      "line_length": "79",
+      "line_length": "120",
       "create_example_template": "cli",
       "_copy_without_render": [
         "poetry.lock"
