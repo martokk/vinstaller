@@ -3,8 +3,8 @@ from pathlib import Path
 
 from rich import print
 from rich.console import Console
-from vinstaller.installer import Installer
 
+from vinstaller.installer import Installer
 from vinstaller.profile import Profile
 from vinstaller.profile_loader import ProfileLoader
 from vinstaller.view import View
