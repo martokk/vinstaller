@@ -34,7 +34,7 @@ classifiers = [  #! Update me
 [tool.poetry.dependencies]
 python = "^3.10"
 typer = {extras = ["all"], version = "^0.6.1"}
-rich = "^10.14.0"
+rich = "^12.6.0"
 loguru = "^0.6.0"
 colorama = "^0.4.5"
 isort = "^5.10.1"
