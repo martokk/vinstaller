@@ -1,6 +1,5 @@
 """A vLifeLong Project created by Martokk."""
 
-import sys
 from importlib import metadata as importlib_metadata
 
 
