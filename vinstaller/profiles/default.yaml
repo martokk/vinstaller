@@ -1,0 +1,116 @@
+name: kde-neon-desktop
+
+dotfiles_repo: https://github.com/martokk/dotfiles
+dotfiles_local: ~/dev/dotfiles
+dotfiles_profile: linux
+
+install_order:
+  - pre_install_notes
+  - first_install_scripts
+  - apt_ppas
+  - apt_packages
+  - pip_packages
+  - install_scripts
+  - snap_packages
+  - flatpak_packages
+  - post_install_notes
+
+first_install_scripts:
+  - pyenv # Manage Python Versions
+  - dotfiles # Dotfiles
+  - zsh # Shell
+
+apt_ppas:
+  - team-xbmc/ppa # Kodi-xbmc
+  - apandada1/blanket # Blanket
+
+apt_packages:
+  - adb # Android Support
+  - aria2 # Downloader. uGet
+  - blanket # Audio Background Noise
+  - bleachbit # Actually delete files
+  - blueman # Bluetooth Support
+  - chromium-chromedriver
+  - curl # Downloader
+  - ffmpeg # Video Codecs
+  - fonts-powerline # for OnMyZSH
+  - fuse # for iPhone Support
+  - gimp # Image Editor
+  - git # Version Control
+  - gparted # Disk/Partition Manager
+  - grub-customizer # GRUB Boot loader Customizer
+  - handbrake # Transcode Videos
+  - htop # Process Stats
+  - ifuse # iPhone support
+  - iotop # I/O System Stats
+  - kodi # Media Center
+  - libnotify-bin # for python to desktop notifications
+  - libimobiledevice # iPhone support
+  - libimobiledevice-utils # iPhone support
+  - lsof # Find which processes is running on mounted device
+  - ncdu # CLI QDirStat. Folder size.
+  - neofetch # System Details
+  - nerd-fonts # for OnMyZSH
+  - ntfs-3g # for mounting NTFS drives
+  - p7zip-full #7zip
+  - powertop # Power & Battery Overview
+  - qdirstat # Folder Size
+  - remmina # VNC Viewer
+  - rmlint # Find & Fix Broken Symlinks
+  - rsync  # Sync files
+  - scrcpy # Mirror Screen Android to Linux
+  - speedtest-cli
+  - sqlitebrowser # Database Viewer
+  - testdisk # Un-delete files
+  - transmission # Torrent Downloader
+  - tree # Print folder structure as a tree
+  - uget # Download Manager
+  - unison # Sync Files between Folders
+  - unison-gtk # Sync Files between Folders GUI
+  - unrar # Archive
+  - unzip # Archive
+  - virtualbox # Virtual Machine
+  - vlc # Video Player
+  - x11-utils # Extend Display to Android
+  - x11vnc # Extend Display to Android
+  - xbindkeys # Bind Mouse/Keyboard Keys
+  - xdotool # Bind Mouse/Keyboard Keys
+  - yakuake # Drop Down Terminal
+
+pip_packages:
+  - beautifulsoup4 # Web Scraper
+  - browsercookie # Browser Cookies
+  - bpytop # Better htop
+  - cookiecutter # Boilerplate Python Projects
+  - cruft # Keeps python project synced with cookiecutter project initiated from.
+  - notify2 # Send Notifications
+  - pandas # Wrangle Data
+  - pickle5 # Pickle data
+  - powertop # Power Usage
+  - rich # Terminal Colors
+  - rich-demo # Terminal Colors
+  - selenium # Web Driver
+
+install_scripts:
+  - brave # Browser
+  - auto-cpufreq # CPU Governor. Saves Battery
+  - private_internet_access # VPN
+  - yt-dlp # Youtube Downloader
+  - aws-cli # AWS CLI
+  - espanso # Text Expander
+  - etcher # Flash Image to USB
+  - gitkraken # Version Control Manager
+  
+
+snap_packages:
+  - NONE
+
+flatpak_packages:
+  - NONE
+
+pre_install_notes:
+  - pre_install_notes
+
+post_install_notes:
+  - add https://immersed.com/
+  - add 

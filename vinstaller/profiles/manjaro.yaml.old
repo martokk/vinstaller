@@ -1,0 +1,123 @@
+name: Manjaro
+
+
+#install_first_script: 'install_first_manjaro.sh'
+install_first:
+    - 'sudo pacman -S --needed git base-devel yay' # installs yay
+    - 'yay -Syu rtw89-dkms-git linux-git-rtw89' # updates yay, then install headers and driver
+    - 'yay -S python3' # installing requriements
+    - ''
+
+
+pacman_packages: # sudo pacman -S --needed XXXXXX  # use --needed to skill reinstall of existing packages
+    - auto-cpufreq
+    - git
+    - aria2
+    - bleachbit
+    - brave-browser
+    - curl
+    - ffmpeg
+    - fuse
+    - git
+    - gimp
+    - gparted
+    - handbrake
+    - iotop
+    - neofetch
+    - ntfs-3g
+    - playonlinux
+    - powertop
+    - remmina
+    - rsync
+    - scrcpy
+    - solaar
+    - steam
+    - testdisk
+    - uget
+    - unison
+    - unrar
+    - unzip
+    - veracrypt
+    - virtualbox
+    - wine
+    - x11vnc
+    - xbindkeys
+    - xorg-xev
+    - xdotool
+    - youtube-dl
+    - xorg-xinput
+
+
+
+
+#auto-cpufreq git aria2 bleachbit brave-browser curl ffmpeg fuse git gimp gparted handbrake iotop neofetch ntfs-3g playonlinux powertop remmina rsync scrcpy solaar steam testdisk uget unison unrar unzip veracrypt virtualbox wine x11vnc xbindkeys xorg-xev xdotool youtube-dl xorg-xinput
+
+
+yay_packages: # yay -S --needed XXXXXX  # no need for sudo!
+    - qdirstat
+    - qownnotes
+    - gitkraken
+    - powerline-fonts
+    - nerd-fonts-complete
+    - zsh-autosuggestions
+    - zsh-syntax-highlighting
+
+
+#qdirstat qownnotes gitkraken powerline-fonts nerd-fonts-complete zsh-autosuggestions zsh-syntax-highlighting
+
+
+
+
+#pip_packages:
+  #- rich
+  #- rich-demo
+  #- filelock
+  #- lxml
+  #- selenium
+  #- django
+  #- browsercookie
+  #- google-api-python-client
+  #- google-auth-oauthlib
+  #- google-auth-httplib2
+  #- python-telegram-bot
+  #- beautifulsoup4
+  #- django-bootstrap4
+  #- ipython
+  #- Jinja2
+  #- Markdown
+  #- notify2
+  #- oauthlib
+  #- pandas
+  #- pickle5
+  #- powertop
+  #- pygame
+  #- PyGObject
+  #- PyQt5
+  #- pyttsx3
+  #- setuptools
+
+
+#rich rich-demo filelock lxml selenium cssselec django browsercookie google-api-python-client google-auth-oauthlib google-auth-httplib2 python-telegram-bot beautifulsoup4 django-bootstrap4 ipython Jinja2 Markdown notify2 oauthlib pandas pickle5 powertop pygame PyGObject PyQt5 pyttsx3 setuptools
+
+
+
+
+#install_scripts:
+  #- private_internet_access
+  
+
+#pre_install_notes:
+  #- pre_install_notes
+
+#post_install_notes:
+  #- PyCharm2021.2 is the hackable version. You need to manually install.
+  #- https://immersed.com/
+
+
+
+
+
+# Oh My Zsh (create a install script)
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+
