@@ -33,11 +33,11 @@ classifiers = [  #! Update me
 
 [tool.poetry.dependencies]
 python = "^3.10"
-
 typer = {extras = ["all"], version = "^0.4.0"}
 rich = "^10.14.0"
-
 loguru = "^0.6.0"
+colorama = "^0.4.5"
+isort = "^5.10.1"
 
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.1"
@@ -57,12 +57,14 @@ coverage-badge = "^1.1.0"
 pytest-html = "^3.1.1"
 pytest-cov = "^3.0.0"
 
+[tool.poetry.group.dev.dependencies]
+flake8 = "^5.0.4"
+
 [tool.black]
 # https://github.com/psf/black
 target-version = ["py310"]
-line-length = 79
+line-length = 120
 color = true
-
 exclude = '''
 /(
     \.git
@@ -79,10 +81,13 @@ exclude = '''
 )/
 '''
 
+[flake8]
+max-line-length = 120
+
 [tool.isort]
 # https://github.com/timothycrosley/isort/
 py_version = 310
-line_length = 79
+line_length = 120
 
 known_typing = ["typing", "types", "typing_extensions", "mypy", "mypy_extensions"]
 sections = ["FUTURE", "TYPING", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
