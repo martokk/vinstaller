@@ -1,5 +1,4 @@
-name: kde-neon-desktop
-
+name: "Default Profile"
 dotfiles_repo: https://github.com/martokk/dotfiles
 dotfiles_local: ~/dev/dotfiles
 dotfiles_profile: linux
@@ -57,7 +56,7 @@ apt_packages:
   - qdirstat # Folder Size
   - remmina # VNC Viewer
   - rmlint # Find & Fix Broken Symlinks
-  - rsync  # Sync files
+  - rsync # Sync files
   - scrcpy # Mirror Screen Android to Linux
   - speedtest-cli
   - sqlitebrowser # Database Viewer
@@ -100,7 +99,6 @@ install_scripts:
   - espanso # Text Expander
   - etcher # Flash Image to USB
   - gitkraken # Version Control Manager
-  
 
 snap_packages:
   - NONE
@@ -109,8 +107,10 @@ flatpak_packages:
   - NONE
 
 pre_install_notes:
-  - pre_install_notes
+  - Remember to buy milk.
+  - Remember to install Immersed Desktop to get VR expoeriance
+  - Yadadada yadad yadadadada yadadadada
 
 post_install_notes:
   - add https://immersed.com/
-  - add 
+  - add

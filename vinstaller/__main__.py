@@ -1,12 +1,12 @@
 import typer
 from loguru import logger
 from rich.console import Console
-from vinstaller import version
 
-# from vinstaller.old_main import FreshInstall
+from vinstaller import version
+from vinstaller.main import Main
 
 # Configure Loguru Logger
-logger.add("log.log", level="TRACE", rotation="50 MB")
+logger.add("log.log", level="DEBUG", rotation="50 MB")
 
 # Configure Rich Console
 console = Console()
@@ -41,9 +41,10 @@ def main(
     ),
 ) -> None:
 
-    # Entry Point
-    logger.info(f"Entry Point! {profile=}")
-    # FreshInstall(profile_name=_args.profile).run()
+    # Start Installer
+    logger.info("--------------------------------------------------------")
+    logger.info(f"vInstaller Started... {profile=}")
+    Main(profile_name=profile)
 
 
 if __name__ == "__main__":
