@@ -30,6 +30,7 @@ class Installer:
             subprocess.call(["git", "clone", "https://github.com/martokk/dotfiles", "~/dotfiles"])
             subprocess.call(["cd", "~/dotfiles"])
             subprocess.call(["bash", "./install.sh", f"{dotfiles_profile}"])
+        return True
 
     def install_apt_ppas(self, apt_ppas: list[str]) -> bool:
         print(self.view.build_install_panel(title="Install Apt PPA Repos", list_items=apt_ppas))
