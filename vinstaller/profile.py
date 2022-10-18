@@ -9,7 +9,6 @@ class Profile:
     profile_name: str
     profile_path: Path
     dotfiles_repo: str
-    dotfiles_local: str
     dotfiles_profile: str
 
     # Install

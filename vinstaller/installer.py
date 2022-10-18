@@ -14,6 +14,23 @@ class Installer:
         self.view = View()
         self.simulate = simulate
 
+    def install_dotfiles(self, dotfiles_repo: str, dotfiles_profile: str, simulate=True) -> bool:
+        dotfiles_data = [f"repo: {dotfiles_repo}", f"profile: {dotfiles_profile}"]
+        print(self.view.build_install_panel(title="Install Dotfiles", list_items=dotfiles_data))
+
+        _continue = console.input("[magenta bold]Press [yellow](y/Y)[/yellow] to install these dotfiles:[/] ")
+        if _continue.lower() != "y":
+            return False
+
+        if simulate:
+            print('subprocess.call(["git", "clone", "https://github.com/martokk/dotfiles", "~/dotfiles"])')
+            print('subprocess.call(["cd", "~/dotfiles"])')
+            print('subprocess.call(["bash", "./install.sh", f"{dotfiles_profile}"])')
+        else:
+            subprocess.call(["git", "clone", "https://github.com/martokk/dotfiles", "~/dotfiles"])
+            subprocess.call(["cd", "~/dotfiles"])
+            subprocess.call(["bash", "./install.sh", f"{dotfiles_profile}"])
+
     def install_apt_ppas(self, apt_ppas: list[str]) -> bool:
         print(self.view.build_install_panel(title="Install Apt PPA Repos", list_items=apt_ppas))
 
@@ -88,6 +105,7 @@ class Installer:
         for install_script in scripts:
             script_path = Path("./fresh_install/install_scripts") / f"{install_script}.sh"
             install_command = ["bash", script_path]
+
             print(f"Running Install Script [blue]'{install_script}'[/]:")
             if self.simulate:
                 print(f"subprocess.call({install_command})")

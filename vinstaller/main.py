@@ -43,6 +43,8 @@ class Main:
             match install_type:
                 case "pre_install_notes":
                     self.run_pre_install_notes()
+                case "dotfiles":
+                    self.run_dotfiles()
                 case "first_install_scripts":
                     self.run_first_install_scripts()
                 case "apt_ppas":
@@ -67,6 +69,12 @@ class Main:
             return
         print(self.view.build_panel(title="Pre Install Notes", list_items=self.profile.pre_install_notes))
         _ = console.input("[magenta bold]Press Enter key to continue[/]")
+
+    def run_dotfiles(self) -> None:
+        install_status = self.installer.install_dotfiles(
+            dotfiles_repo=self.profile.dotfiles_repo, dotfiles_profile=self.profile.dotfiles_profile
+        )
+        self.view.display_install(install_status=install_status, success_text="Dotfiles installed!")
 
     def run_first_install_scripts(self) -> None:
         install_status = self.installer.install_scripts(scripts=self.profile.first_install_scripts)

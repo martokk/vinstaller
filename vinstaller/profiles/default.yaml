@@ -1,11 +1,11 @@
 name: "Default Profile"
 dotfiles_repo: https://github.com/martokk/dotfiles
-dotfiles_local: ~/dev/dotfiles
 dotfiles_profile: linux
 
 install_order:
   - pre_install_notes
   - first_install_scripts
+  - dotfiles
   - apt_ppas
   - apt_packages
   - pip_packages
@@ -16,7 +16,6 @@ install_order:
 
 first_install_scripts:
   - pyenv # Manage Python Versions
-  - dotfiles # Dotfiles
   - zsh # Shell
 
 apt_ppas:
