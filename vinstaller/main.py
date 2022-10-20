@@ -17,10 +17,10 @@ INSTALL_SCRIPTS_PATH = Path.home() / ".vapps/vinstaller/install_scripts"
 
 
 class Main:
-    def __init__(self, profile_name: str) -> None:
+    def __init__(self, profile_name: str, simulate=True) -> None:
         self.profile: Profile = ProfileLoader().get_profile(profile_name=profile_name, profiles_path=PROFILES_PATH)
         self.view = View()
-        self.installer = Installer(simulate=True)
+        self.installer = Installer(simulate=simulate)
         self.install_symlinks()
         self.run()
 

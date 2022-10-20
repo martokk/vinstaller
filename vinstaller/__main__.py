@@ -39,12 +39,20 @@ def main(
         is_eager=True,
         help="Prints the version of the vinstaller package.",
     ),
+    simulate: bool = typer.Option(
+        False,
+        "-s",
+        "--simulate",
+        help="Simulate installs.",
+    ),
 ) -> None:
-
     # Start Installer
     logger.info("--------------------------------------------------------")
-    logger.info(f"vInstaller Started... {profile=}")
-    Main(profile_name=profile)
+    logger.info(f"vInstaller Started... {profile=} {simulate=}")
+
+    Main(profile_name=profile, simulate=simulate)
+    print("\n")
+    console.print("[green bold underline]vInstaller Complete![/]")
 
 
 if __name__ == "__main__":
