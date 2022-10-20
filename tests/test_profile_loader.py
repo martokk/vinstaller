@@ -27,3 +27,7 @@
 # def test_load_missing_profile(profile_name: str, expected: type):
 #     with pytest.raises(SystemExit):
 #         ProfileLoader().get_profile(profile_name=profile_name, profiles_path=PROFILES_PATH)
+
+
+def test_temp() -> None:
+    assert 1 == 1
