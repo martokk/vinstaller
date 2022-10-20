@@ -15,6 +15,7 @@ install_order:
   - post_install_notes
 
 first_install_scripts:
+  - symlinks_FILES_to_HOME
   - pyenv # Manage Python Versions
   - zsh # Shell
 
@@ -43,6 +44,7 @@ apt_packages:
   - lsof # Find which processes is running on mounted device
   - ncdu # CLI QDirStat. Folder size.
   - neofetch # System Details
+  - net-tools # netstat
   # - nerd-fonts # for OnMyZSH
   # - ntfs-3g # for mounting NTFS drives
   - p7zip-full #7zip
@@ -67,7 +69,7 @@ apt_packages:
   # - x11-utils # Extend Display to Android
   # - x11vnc # Extend Display to Android
   - xbindkeys # Bind Mouse/Keyboard Keys
-  # - xdotool # Bind Mouse/Keyboard Keys
+  - xdotool # (required by xbindkeys)
   - yakuake # Drop Down Terminal
 
 pip_packages:
@@ -93,6 +95,9 @@ install_scripts:
   - espanso # Text Expander
   # - etcher # Flash Image to USB
   # - gitkraken # Version Control Manager
+  - vscode # IDE Code Editor
+  - opensnitch # Block Network Traffic
+  - imwheel # Fix Mouse Scroll Speed (if needed)
 
 snap_packages: []
 
