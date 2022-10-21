@@ -5,23 +5,29 @@ from rich import print
 from rich.console import Console
 
 from vinstaller.installer import Installer
-from vinstaller.profile import Profile
+from vinstaller.profile_loader import ProfileLoader
 from vinstaller.view import View
+
+PROFILES_PATH = Path.home() / ".vapps/vinstaller/profiles"
+INSTALL_SCRIPTS_PATH = Path.home() / ".vapps/vinstaller/install_scripts"
+
 
 console = Console()
 # logger.add("log.log", level="TRACE", rotation="50 MB")
 
 
 class Main:
-    def __init__(self, profile: Profile, simulate=True) -> None:
-        self.profile = profile
+    def __init__(self, profile_name: str, simulate=True) -> None:
+        self.install_symlinks()
+        self.profile = ProfileLoader().get_profile(profile_name=profile_name, profiles_path=PROFILES_PATH)
         self.view = View()
         self.installer = Installer(simulate=simulate)
 
-    # TODO: This hack needs to be properly handled.
-    def install_symlinks(self):
-        source_path = Path("vinstaller")
+    def install_symlinks(self) -> None:
+        source_path = Path(os.path.dirname(os.path.realpath(__file__)))
         destination_path = Path.home() / ".vapps/vinstaller"
+
+        os.makedirs(destination_path, exist_ok=True)
 
         if not Path(destination_path / "profiles").exists():
             os.symlink(Path(source_path / "profiles").absolute(), Path(destination_path / "profiles"))
@@ -31,7 +37,6 @@ class Main:
 
     def run(self) -> None:
         self.view.display_start_header(profile_name=self.profile.name)
-        self.install_symlinks()
         self.run_install_order(install_order=self.profile.install_order)
 
     def run_install_order(self, install_order: list[str]) -> None:

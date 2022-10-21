@@ -2,17 +2,12 @@
 # package: pyenv
 # about: PyEnv controls and sets the system-wide Python Versions.
 
-
 # Install Dependencies to build
 sudo apt update
-sudo apt install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-
+sudo apt install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev -y
 
 # Download & Run Installer
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-
-exec $SHELL
-
+exec curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 
 #
 # # Download and run installer script:
@@ -31,10 +26,12 @@ exec $SHELL
 # echo 'eval "$(pyenv init -)"' >>~/.zshrc
 
 # Install Python 3.10.8
-pyenv install -v 3.10.8
+"$HOME/.pyenv/bin/pyenv" install -v 3.10.8
 
 # View installed Python Versions
-pyenv versions
+"$HOME/.pyenv/bin/pyenv" versions
 
 # Set Global python to 3.10.8
-pyenv global 3.10.8
+"$HOME/.pyenv/bin/pyenv" global 3.10.8
+
+exec $SHELL

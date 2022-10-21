@@ -1,3 +1,5 @@
+import os
+
 from rich import box, print
 from rich.columns import Columns
 from rich.console import Console, Group
@@ -14,6 +16,7 @@ class View:
     def display_start_header(profile_name: str) -> None:
         print(f"[cyan bold underline]vInstaller v{version}[/]")
         print(f"\t- profile_name: {profile_name}\n")
+        print(f"\t- cwd: {os.getcwd()}\n")
 
     @staticmethod
     def display_step(step: int, text: str) -> None:

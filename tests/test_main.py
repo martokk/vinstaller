@@ -2,11 +2,12 @@
 # from pathlib import Path
 
 from pathlib import Path
-import pytest
-from vinstaller.profile import Profile
 from unittest.mock import Mock
+
+import pytest
+
 from vinstaller.main import Main
-from vinstaller.profile_loader import ProfileLoader
+from vinstaller.profile import Profile
 from vinstaller.view import View
 
 
@@ -32,8 +33,9 @@ def profile() -> Profile:
 
 
 @pytest.fixture
-def main(profile: Profile) -> Main:
-    return Main(profile=profile, simulate=True)
+def main(mocker: Mock, profile: Profile) -> Main:
+    mocker.patch("vinstaller.profile_loader.ProfileLoader.get_profile", return_value=profile)
+    return Main(profile_name="mocked", simulate=True)
 
 
 def test_init_main(main: Main) -> None:
