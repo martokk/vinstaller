@@ -5,7 +5,7 @@
       "type": "python",
       "request": "launch",
       "module": "vinstaller",
-      "args": ["--profile", "default"],
+      "args": ["--profile", "default", "--simulate"],
       "justMyCode": true
     }
   ]
