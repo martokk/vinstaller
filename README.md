@@ -21,30 +21,16 @@ A vLifeLong Project created by Martokk.
 
 ---
 
-## Features
-
 ## Installation
 
 ```bash
 pip install -U vinstaller
 ```
 
-or install with `Poetry`
+## Usage
 
 ```bash
-poetry add vinstaller
-```
-
-Then you can run
-
-```bash
-vinstaller --help
-```
-
-or with `Poetry`:
-
-```bash
-poetry run vinstaller --help
+python3 -m vinstaller --profile default --simulate
 ```
 
 ## 📈 Releases
