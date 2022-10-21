@@ -1,9 +1,17 @@
+from pathlib import Path
 import typer
 from loguru import logger
 from rich.console import Console
 
 from vinstaller import version
 from vinstaller.main import Main
+from vinstaller.profile import Profile
+from vinstaller.profile_loader import ProfileLoader
+
+
+PROFILES_PATH = Path.home() / ".vapps/vinstaller/profiles"
+INSTALL_SCRIPTS_PATH = Path.home() / ".vapps/vinstaller/install_scripts"
+
 
 # Configure Loguru Logger
 logger.add("log.log", level="DEBUG", rotation="50 MB")
@@ -50,7 +58,8 @@ def main(
     logger.info("--------------------------------------------------------")
     logger.info(f"vInstaller Started... {profile=} {simulate=}")
 
-    Main(profile_name=profile, simulate=simulate)
+    _profile: Profile = ProfileLoader().get_profile(profile_name=profile, profiles_path=PROFILES_PATH)
+    Main(profile=_profile, simulate=simulate).run()
     print("\n")
     console.print("[green bold underline]vInstaller Complete![/]")
 
