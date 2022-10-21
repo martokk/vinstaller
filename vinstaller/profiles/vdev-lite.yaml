@@ -17,6 +17,7 @@ install_order:
 first_install_scripts:
   - symlinks_FILES_to_HOME
   - pyenv # Manage Python Versions
+  - poetry
   - zsh # Shell
 
 apt_ppas: []
