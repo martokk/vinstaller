@@ -1,15 +1,15 @@
 #!/usr/bin/bash
 
-# Check if /media/martokk/FILES exists
-if [ -d /media/martokk/FILES ]; then
-    echo "/media/martokk/FILES was found. Creating symlinks..."
+# Check if /media/$USER/FILES exists
+if [ -d "/media/$USER/FILES" ]; then
+    echo "/media/$USER/FILES was found. Creating symlinks..."
 
     # HOME FOLDERS
-    SOURCE=/media/martokk/FILES/
+    SOURCE="/media/$USER/FILES"
     ln -sfv "$SOURCE/__INBOX__" "$HOME/__INBOX__"
     ln -sfv "$SOURCE/Audio" "$HOME/Audio"
     ln -sfv "$SOURCE/dev" "$HOME/dev"
-    ln -sfv "$SOURCE/Downloads" "$HOME/Downloads"
+    ln -sfv "$SOURCE/__INBOX__" "$HOME/Downloads"
     ln -sfv "$SOURCE/Games" "$HOME/Games"
     ln -sfv "$SOURCE/Movies" "$HOME/Movies"
     ln -sfv "$SOURCE/Music" "$HOME/Music"
