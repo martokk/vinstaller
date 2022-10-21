@@ -1,5 +1,5 @@
 {
-  "template": "/media/martokk/FILES/dev/templates/cookiecutter/cookiecutter_python",
+  "template": "https://github.com/martokk/cookiecutter_python",
   "commit": "8736eb98c82870ce57c99a36be9a2acefac93627",
   "checkout": null,
   "context": {
@@ -20,7 +20,7 @@
       "_copy_without_render": [
         "poetry.lock"
       ],
-      "_template": "/media/martokk/FILES/dev/templates/cookiecutter/cookiecutter_python"
+      "_template": "https://github.com/martokk/cookiecutter_python"
     }
   },
   "directory": null
