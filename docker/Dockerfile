@@ -5,7 +5,7 @@
 # CMD ["project_name"]
 
 
-FROM python:3.10-slim-buster
+FROM python:3.11-slim-buster
 
 ENV LANG=C.UTF-8 \
   LC_ALL=C.UTF-8 \
